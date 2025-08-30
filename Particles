@@ -1,0 +1,17 @@
+local decalID = 8408806737
+
+local function applyParticles()
+	for _, player in pairs(game.Players:GetPlayers()) do
+		local char = player.Character
+		if char and char:FindFirstChild("Torso") then
+			for _ = 1, 3 do
+				local emit = Instance.new("ParticleEmitter")
+				emit.Texture = "http://www.roblox.com/asset/?id=" .. decalID
+				emit.VelocitySpread = 20
+				emit.Parent = char.Torso
+			end
+		end
+	end
+end
+
+applyParticles()
